@@ -6,8 +6,12 @@ import GalleryImg3 from "../src/img/gallery/3.png";
 import GalleryImg4 from "../src/img/gallery/4.png";
 import GalleryImg5 from "../src/img/gallery/5.png";
 import GalleryImg6 from "../src/img/gallery/6.png";
-import GalleryImg7 from "../src/img/gallery/7.png";
-import GalleryImg8 from "../src/img/gallery/8.png";
+// import Video1 from "../src/video/1.mp4";
+// import Video2 from "../src/video/1.mp4";
+// import Video3 from "../src/video/1.mp4";
+// import Video4 from "../src/video/1.mp4";
+// import Video5 from "../src/video/1.mp4";
+// import Video6 from "../src/video/1.mp4";
 import QuoteImg from "../src/img/testimonial/quote.svg";
 // import icons
 import { GrFacebookOption } from "react-icons/gr";
@@ -46,12 +50,12 @@ export const heroData = {
 };
 
 export const aboutData = {
-  title: "My Story:",
+  title: "Mon histoire:",
   subtitle1:
     "In velit arcu posuere integer. Dolor sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus hac vel ante sit sed scelerisque praesent duis volutpat laoreet.",
   subtitle2:
     "Nisl, sit molestie commodo congue. Etiam lectus risus in amet. Commodo molestie fames etiam aenean sed. Pellentesque et venenatis amet, tellus hac vel adipiscing sit. Placerat vitae nisl viverra faucibus tincidunt habitasse amet. Nunc, velit nunc, scelerisque imperdiet nunc.",
-  btnText: "Know more",
+  btnText: "En savoir plus",
   btnIcon: <IoMdArrowForward />,
 };
 
@@ -61,60 +65,65 @@ export const galleryData = {
   btnIcon: <IoMdArrowForward />,
   images: [
     {
+      id: 1,
       src: GalleryImg1,
-      original: GalleryImg1,
       width: 465,
       height: 412,
+      videoId: 1,
     },
     {
+      id: 2,
       src: GalleryImg2,
-      original: GalleryImg2,
       width: 465,
       height: 540,
+      videoId: 2,
     },
     {
+      id: 3,
       src: GalleryImg3,
-      original: GalleryImg3,
       width: 465,
       height: 412,
+      videoId: 3,
     },
     {
+      id: 4,
       src: GalleryImg4,
-      original: GalleryImg4,
       width: 465,
       height: 540,
+      videoId: 4,
     },
     {
+      id: 5,
       src: GalleryImg5,
-      original: GalleryImg5,
       width: 465,
       height: 540,
+      videoId: 5,
     },
     {
+      id: 6,
       src: GalleryImg6,
-      original: GalleryImg6,
       width: 464,
       height: 412,
+      videoId: 6,
     },
-    {
-      src: GalleryImg7,
-      original: GalleryImg7,
-      width: 465,
-      height: 540,
-    },
-    {
-      src: GalleryImg8,
-      original: GalleryImg8,
-      width: 465,
-      height: 412,
-    },
+  ],
+};
+
+export const videoData = {
+  videos: [
+    { id: 1, fileName: "1.mp4" },
+    { id: 2, fileName: "1.mp4" },
+    { id: 3, fileName: "1.mp4" },
+    { id: 4, fileName: "1.mp4" },
+    { id: 5, fileName: "1.mp4" },
+    { id: 6, fileName: "1.mp4" },
   ],
 };
 
 export const interviewData = {
   title:
     "“Consider what you desire. Your tattoo artist will never tell you what tattoo to have.”",
-  btnText: "Watch it now",
+  btnText: "Regarder maintenant",
   btnIcon: <FaPlay />,
 };
 
