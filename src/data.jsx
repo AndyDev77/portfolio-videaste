@@ -3,20 +3,15 @@ import Logo from "../src/img/header/logo.svg";
 import GalleryImg1 from "../src/img/gallery/1.png";
 import GalleryImg2 from "../src/img/gallery/2.png";
 import GalleryImg3 from "../src/img/gallery/3.png";
-import GalleryImg4 from "../src/img/gallery/4.png";
-import GalleryImg5 from "../src/img/gallery/5.png";
-import GalleryImg6 from "../src/img/gallery/6.png";
-// import Video1 from "../src/video/1.mp4";
-// import Video2 from "../src/video/1.mp4";
-// import Video3 from "../src/video/1.mp4";
-// import Video4 from "../src/video/1.mp4";
-// import Video5 from "../src/video/1.mp4";
-// import Video6 from "../src/video/1.mp4";
-import QuoteImg from "../src/img/testimonial/quote.svg";
+
+import Video1 from "../src/video/1.mp4";
+import Video2 from "../src/video/2.mp4";
+import Video3 from "../src/video/3.mp4";
+
+// import QuoteImg from "../src/img/testimonial/quote.svg";
 // import icons
 import { GrFacebookOption } from "react-icons/gr";
 import { IoMdArrowForward } from "react-icons/io";
-import { FiSend } from "react-icons/fi";
 import { FaPlay, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
 
@@ -29,8 +24,6 @@ export const navData = {
     { href: "/", name: "Accueil" },
     { href: "/", name: "A propos" },
     { href: "/", name: "Projets" },
-    { href: "/", name: "Interview" },
-    { href: "/", name: "Articles" },
     { href: "/", name: "Contact" },
   ],
 };
@@ -45,7 +38,7 @@ export const heroData = {
   title: "Thomas Delangle",
   subtitle:
     "Une fusion artistique et technique captivante, où chaque projet raconte une histoire immersive avec des montages fluides et une attention aux détails.",
-  btnText: "En savoir plus",
+  btnText: "Télécharger mon CV",
   btnIcon: <IoMdArrowForward />,
 };
 
@@ -59,64 +52,32 @@ export const aboutData = {
   btnIcon: <IoMdArrowForward />,
 };
 
-export const galleryData = {
-  title: "Check my gallery:",
-  btnText: "View all",
+export const ProjectsData = {
+  title: "Mes projets",
+  btnText: "Voir les projets",
   btnIcon: <IoMdArrowForward />,
   images: [
     {
-      id: 1,
       src: GalleryImg1,
-      width: 465,
-      height: 412,
-      videoId: 1,
+      name: "Imaginify",
+      description:
+        "Création d'un SaaS avec des fonctionnalités d'IA et un système de paiements et de crédits.",
+      video: Video1,
     },
     {
-      id: 2,
       src: GalleryImg2,
-      width: 465,
-      height: 540,
-      videoId: 2,
+      name: "fdjgti",
+      description:
+        "Création d'un SaaS avec des fonctionnalités d'IA et un système de paiements et de crédits.",
+      video: Video2,
     },
     {
-      id: 3,
       src: GalleryImg3,
-      width: 465,
-      height: 412,
-      videoId: 3,
+      name: "sbrteo",
+      description:
+        "Création d'un SaaS avec des fonctionnalités d'IA et un système de paiements et de crédits.",
+      video: Video3,
     },
-    {
-      id: 4,
-      src: GalleryImg4,
-      width: 465,
-      height: 540,
-      videoId: 4,
-    },
-    {
-      id: 5,
-      src: GalleryImg5,
-      width: 465,
-      height: 540,
-      videoId: 5,
-    },
-    {
-      id: 6,
-      src: GalleryImg6,
-      width: 464,
-      height: 412,
-      videoId: 6,
-    },
-  ],
-};
-
-export const videoData = {
-  videos: [
-    { id: 1, fileName: "1.mp4" },
-    { id: 2, fileName: "1.mp4" },
-    { id: 3, fileName: "1.mp4" },
-    { id: 4, fileName: "1.mp4" },
-    { id: 5, fileName: "1.mp4" },
-    { id: 6, fileName: "1.mp4" },
   ],
 };
 
@@ -127,74 +88,56 @@ export const interviewData = {
   btnIcon: <FaPlay />,
 };
 
-export const testimonialData = [
-  {
-    quoteImg: QuoteImg,
-    message:
-      "The entire team is extremely kind and friendly. They're fantastic. They're great at what they do! And it's unique.They will properly consult with you.",
-    name: "Jack Geoffrey",
-    occupation: "Tattoo Artist",
-  },
-  {
-    quoteImg: QuoteImg,
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam culpa asperiores officia natus dignissimos autem possimus molestias aperiam?",
-    name: "Douglas Hane",
-    occupation: "Tattoo Artist",
-  },
-];
+// export const testimonialData = [
+//   {
+//     quoteImg: QuoteImg,
+//     message:
+//       "The entire team is extremely kind and friendly. They're fantastic. They're great at what they do! And it's unique.They will properly consult with you.",
+//     name: "Jack Geoffrey",
+//     occupation: "Tattoo Artist",
+//   },
+//   {
+//     quoteImg: QuoteImg,
+//     message:
+//       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam culpa asperiores officia natus dignissimos autem possimus molestias aperiam?",
+//     name: "Douglas Hane",
+//     occupation: "Tattoo Artist",
+//   },
+// ];
 
 export const contactData = {
-  title: "Get in touch with me:",
+  title: "Contactez-moi",
   info: [
     {
-      title: "LA office",
+      title: "Lorem Ipsum",
       subtitle:
         "In velit arcu posuere integer sit amet, consectetur nun adipiscing elit. Duis porttitor massa tellus",
       address: {
         icon: <FaMapMarkerAlt />,
-        name: "784 Norman Street, Los Angeles",
+        name: "localisation",
       },
       phone: {
         icon: <FaPhoneAlt />,
-        number: "+49 93 30493943",
+        number: "+3377777777",
       },
       email: {
         icon: <FaEnvelope />,
-        address: "contact@yourcompany.com",
+        address: "thomas@gmail.com",
       },
-      link: "Get location",
-    },
-    {
-      title: "NYC office",
-      subtitle:
-        "Sit amet, consectetur nun in velit arcu posuere integer. Adipiscing elit duis porttitor massa tellus",
-      address: {
-        icon: <FaMapMarkerAlt />,
-        name: "1630 Elm Drive, New York City",
-      },
-      phone: {
-        icon: <FaPhoneAlt />,
-        number: "+49 34 36573355",
-      },
-      email: {
-        icon: <FaEnvelope />,
-        address: "contact@yourcompany.com",
-      },
-      link: "Get location",
+      link: "Localisation",
     },
   ],
   form: {
-    name: "Write your name here",
-    email: "Write your email address",
-    message: "Write your messages here",
-    btnText: "Send it",
+    name: "Votre nom et prénom",
+    email: "Votre adresse mail",
+    message: "Votre message",
+    btnText: "Envoyer",
   },
 };
 
 export const footerData = {
   about: {
-    title: "About void tattoo",
+    title: "Lorem Ipsum",
     subtitle:
       "Sit amet, consectetur nun in velit arcu posuere integer. Adipiscing elit duis porttitor massa tellus",
     address: {
@@ -211,30 +154,20 @@ export const footerData = {
     },
   },
   links: {
-    title: "Useful links",
+    title: "Lorem Ipsum",
     items: [
-      { href: "/", name: "About me" },
-      { href: "/", name: "My gallery" },
-      { href: "/", name: "My services" },
+      { href: "/", name: "A propos" },
+      { href: "/", name: "Projets" },
       { href: "/", name: "Contact me" },
     ],
   },
   program: {
     title: "Working Time",
     items: [
-      { name: "Mon - Tue / Appointment" },
-      { name: "Wed - Fri / 10:00 - 9:00pm" },
-      { name: "Sat / 10:00 - 6:00pm" },
-      { name: "Sun / no work on this day" },
+      { name: "Mon - Tue " },
+      { name: "Wed - Fri" },
+      { name: "Sat " },
+      { name: "Sun " },
     ],
-  },
-  newsletter: {
-    title: "Newsletter",
-    subtitle:
-      "Elit duis porttitor massa tellus nun in velit arcu posuere integer.",
-    form: {
-      placeholder: "Your email address",
-      icon: <FiSend />,
-    },
   },
 };

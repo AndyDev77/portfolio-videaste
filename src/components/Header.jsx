@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { headerData } from "../data";
+// import { headerData } from "../data";
 
 import Nav from "./Nav";
 import NavMobile from "./NavMobile";
@@ -9,7 +9,7 @@ import Socials from "./Socials";
 import { TiThMenuOutline } from "react-icons/ti";
 
 const Header = () => {
-  const { logo } = headerData;
+  // const { logo } = headerData;
 
   const [isActive, setIsActive] = useState(false);
 
@@ -29,7 +29,7 @@ const Header = () => {
     >
       <div className="flex justify-between items-center h-full pl-[50px] pr-[60px]">
         <a href="/">
-          <img className="w-[188px] h-[90px]" src={logo} alt="" />
+          {/* <img className="w-[188px] h-[90px]" src={logo} alt="" /> */}
         </a>
 
         <div className="hidden xl:flex">

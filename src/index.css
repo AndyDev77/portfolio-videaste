@@ -19,6 +19,9 @@
   .h2 {
     @apply text-[40px] xl:text-[85px] text-dark uppercase font-primary max-w-[236px] leading-none mb-[38px];
   }
+  .h4 {
+    @apply text-[22px] font-semibold;
+  }
   /* buttons */
   .btn {
     @apply font-primary text-lg tracking-[0.08em] uppercase px-[40px] transition-all duration-300 flex items-center gap-x-[10px];
@@ -38,4 +41,16 @@
   .btn-link {
     @apply px-0 h-auto text-dark hover:text-dark/90 transition-all;
   }
+}
+
+.badge {
+  @apply z-10 w-[200px] h-[68px] bg-white dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-[10px] flex items-center gap-x-4;
+}
+
+/* swiper bullets styles*/
+
+.swiper-horizontal > .setcion-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-dark;
 }

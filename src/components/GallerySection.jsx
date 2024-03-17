@@ -1,24 +1,31 @@
 import { useState } from "react";
-import { galleryData } from "../data";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import PhotoAlbum from "react-photo-album";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { ProjectsData } from "../data";
+import { Pagination } from "swiper/modules";
+import ProjectCard from "./ProjectCard";
+import ModalVideo from "react-modal-video";
 
 const GallerySection = () => {
-  const [index, setIndex] = useState(-1);
-  const [hoveredPhoto, setHoveredPhoto] = useState(null);
+  const { title, images } = ProjectsData;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("");
 
-  const { title, btnText, btnIcon, images } = galleryData;
-  const photoData = images.map(({ src, width, height }) => ({
-    src,
-    width,
-    height,
-  }));
+  const openModal = (src) => {
+    setIsModalOpen(true);
+    setVideoSrc(src);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setVideoSrc("");
+  };
 
   return (
-    <section className="bg-[#f9f9f9] section relative mt-[40px] lg:mt-0">
+    <section className="section relative mt-[40px] lg:mt-0">
       <div className="container mx-auto">
         <motion.h2
           variants={fadeIn("up")}
@@ -35,50 +42,34 @@ const GallerySection = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.2 }}
-        className="mb-8 lg-mb-20 relative" // Ajouter une position relative ici
+        className="mb-8 lg-mb-20 xl:max-w-[1000px] xl:absolute right-0 top-0"
       >
-        <PhotoAlbum
-          onClick={(event, photo, index) => setIndex(index)}
-          layout="rows"
-          photos={photoData}
-          onMouseEnter={(event, photo) => setHoveredPhoto(photo)}
-          onMouseLeave={() => setHoveredPhoto(null)}
-        />
-        <Lightbox
-          slides={photoData}
-          styles={{ container: { backgroundColor: "rgba(0,0,0,.9)" } }}
-          open={index >= 0}
-          index={index}
-          close={() => setIndex(-1)}
-        />
-        {/* Afficher le bouton sur la photo survolée */}
-        {hoveredPhoto && (
-          <div
-            style={{
-              position: "absolute",
-              top: hoveredPhoto.y, // Utiliser les coordonnées y de la photo
-              left: hoveredPhoto.x, // Utiliser les coordonnées x de la photo
-            }}
-          >
-            <div className="w-[70px] h-[70px] lg:w-[91px] lg:h-[91px] border border-white/40 rounded-full text-dark p-[5px] lg:p-[8px]">
-              <div className="bg-white w-full h-full rounded-full flex justify-center items-center">
-                <div className="pl-1">{btnIcon}</div>
-              </div>
-            </div>
-          </div>
-        )}
+        <Swiper
+          className="h-[480px]"
+          slidesPerView={1}
+          breakpoints={{
+            1024: {
+              slidesPerView: 2,
+            },
+          }}
+          spaceBetween={30}
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+        >
+          {images.map((project, index) => (
+            <SwiperSlide key={index}>
+              <ProjectCard project={project} openModal={openModal} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </motion.div>
-      <motion.div
-        variants={fadeIn("up")}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.2 }}
-        className="flex justify-center"
-      >
-        <button className="btn btn-lg btn-dark">
-          {btnText} <div className="text-xl">{btnIcon}</div>
-        </button>
-      </motion.div>
+      <ModalVideo
+        channel="custom"
+        autoplay
+        isOpen={isModalOpen}
+        url={videoSrc}
+        onClose={closeModal}
+      />
     </section>
   );
 };
